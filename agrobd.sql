@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `online_marketing`
+-- Database: `agrobd`
 --
 
 -- --------------------------------------------------------
@@ -61,9 +61,9 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `brand_name`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'Niky', 1, '2022-02-03 12:39:09', '2022-02-03 12:42:36'),
-(4, 'Bata', 1, '2022-02-03 12:42:42', NULL),
-(5, 'Apex', 0, '2022-02-03 12:42:56', '2022-02-03 12:43:02');
+(6, 'Farm', 1, '2022-03-15 10:52:51', NULL),
+(7, 'Home-bred', 1, '2022-03-15 10:53:27', NULL),
+(8, 'Sea', 1, '2022-03-15 11:14:17', '2022-03-18 11:21:53');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,10 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `product_id`, `qty`, `price`, `user_id`, `user_ip`, `created_at`, `updated_at`) VALUES
-(54, 8, 1, 1200, 1, '127.0.0.1', NULL, NULL);
+(2, 16, 1, 650, 6, '127.0.0.1', NULL, NULL),
+(3, 18, 1, 180, 6, '127.0.0.1', NULL, NULL),
+(4, 18, 1, 180, 5, '127.0.0.1', NULL, NULL),
+(5, 15, 2, 300, 5, '127.0.0.1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,17 +111,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Shoe', 1, '2022-02-03 10:43:21', NULL),
-(3, 'Watchs', 1, '2022-02-03 11:51:21', NULL),
-(4, 'Books', 1, '2022-02-06 09:23:51', NULL),
-(5, 'T-Shart', 1, '2022-02-06 09:24:05', NULL),
-(6, 'Dresses', 1, '2022-02-06 09:37:06', NULL),
-(7, 'Jumpsuits', 1, '2022-02-06 09:37:24', NULL),
-(8, 'Running Shoes', 1, '2022-02-06 09:37:42', NULL),
-(9, 'Pant', 1, '2022-02-06 09:50:39', NULL),
-(10, 'Phone', 1, '2022-02-06 09:51:26', NULL),
-(11, 'Laptop', 0, '2022-02-06 09:51:41', '2022-03-09 07:18:40'),
-(12, 'Tab', 1, '2022-02-06 09:51:52', '2022-02-11 09:46:09');
+(1, 'Rich', 1, '2022-03-15 10:45:53', NULL),
+(2, 'Chicken', 1, '2022-03-15 10:50:07', NULL),
+(3, 'Beef', 1, '2022-03-15 10:50:35', NULL),
+(4, 'Mutton', 1, '2022-03-15 10:52:08', NULL),
+(5, 'Fish', 1, '2022-03-15 10:52:16', NULL),
+(6, 'Fruits', 1, '2022-03-15 11:19:39', '2022-03-15 13:19:34'),
+(7, 'Vegetable', 1, '2022-03-16 01:34:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +144,8 @@ CREATE TABLE `contacts` (
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `date`, `message`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
 (2, 'Mohammad', 'abu15-13860@diu.edu.bd', '01785643672', '2022-02-22', 'Hello I am Abu naiim', 'In Progress', '5', '2022-02-22 05:32:48', '2022-02-22 05:32:48'),
-(3, 'Apurbo', 'naiimabu25@gmail.com', '01316057864', '2022-02-22', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, rem asperiores. Unde ad iste dicta doloremque odit ab pariatur totam, sapiente, illum officia cupiditate voluptas veritatis, similique odio. Voluptatum, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, rem asperiores. Unde ad iste dicta doloremque odit ab pariatur totam, sapiente, illum officia cupiditate voluptas veritatis, similique odio. Voluptatum, at?', 'Seen', '5', '2022-02-22 05:48:51', '2022-02-22 05:51:40');
+(3, 'Apurbo', 'naiimabu25@gmail.com', '01316057864', '2022-02-22', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, rem asperiores. Unde ad iste dicta doloremque odit ab pariatur totam, sapiente, illum officia cupiditate voluptas veritatis, similique odio. Voluptatum, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, rem asperiores. Unde ad iste dicta doloremque odit ab pariatur totam, sapiente, illum officia cupiditate voluptas veritatis, similique odio. Voluptatum, at?', 'Seen', '5', '2022-02-22 05:48:51', '2022-02-22 05:51:40'),
+(4, 'Admin', 'naiimabu25@gmail.com', '01316057864', '2022-03-15', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 'In Progress', '5', '2022-03-15 10:40:44', '2022-03-15 10:40:44');
 
 -- --------------------------------------------------------
 
@@ -167,8 +167,8 @@ CREATE TABLE `discounts` (
 --
 
 INSERT INTO `discounts` (`id`, `discount_name`, `discount_persent`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'New Year 2022', '10', 1, '2022-02-10 14:33:54', '2022-02-11 07:42:46'),
-(3, 'New Year', '20', 1, '2022-03-09 07:49:46', '2022-03-09 07:49:46');
+(3, 'New Year', '20', 1, '2022-03-09 07:49:46', '2022-03-09 07:49:46'),
+(4, 'Google', '10', 1, '2022-03-18 04:36:11', '2022-03-18 04:36:11');
 
 -- --------------------------------------------------------
 
@@ -240,7 +240,7 @@ CREATE TABLE `front_controls` (
 --
 
 INSERT INTO `front_controls` (`id`, `logo_big`, `logo_small`, `home_bg_img`, `home_bg_txt1`, `home_bg_txt2`, `home_bg_txt3`, `home_new_txt1`, `home_new_txt2`, `home_new_txt3`, `home_new_txt1_img`, `home_new_txt2_img`, `home_new_txt3_img`, `home_banner_img`, `home_banner_txt1`, `home_banner_txt2`, `shop_banner_img`, `shop_banner_txt1`, `shop_banner_txt2`, `about_banner_img`, `contact_banner_img`, `myorder_banner_img`, `myorder_banner_txt1`, `myorder_banner_txt2`, `footer_text`, `footer_contact_address`, `footer_contact_phone`, `footer_contact_email`, `footer_iteam_img_1`, `footer_iteam_img_2`, `footer_iteam_img_3`, `footer_iteam_img_4`, `footer_iteam_img_5`, `footer_iteam_img_6`, `footer_social_fb`, `footer_social_twitter`, `footer_social_linkedin`, `footer_social_insta`, `created_at`, `updated_at`) VALUES
-(8, '1646758614.png', '1646756144.png', '1646596710.jpg', 'NEW ARRIVALES', 'Best Price This Year', 'Shoomatic offers your very comfortable time on walking and exercises', 'You Can Directly Go On Shop', 'You Can Directly Go On News', 'You Can Directly Go Contact', '1646816227.jpg', '1646758941.jpg', '1646758941.png', '1646758040.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', '1646816403.jpg', 'MID SEASON\'S SALE', 'MID SEASON\'S SALE Autumn Collection UP TO 20% OFF', '1646760930.jpg', '1646760930.jpg', '1646817025.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 'Dhaka, Bangladesh', '01316057864', 'abu15-13860@diu.edu.bd', '1646761984.jpg', '1646764203.png', '1646761984.jpg', '1646761984.jpg', '1646761984.jpg', '1646761984.jfif', 'https://www.facebook.com/profile.php?id=100010098828694', 'https://github.com/abunaiim25', 'https://www.linkedin.com/in/abu-naiim-516949210/', 'https://www.instagram.com/abu_naiim/?fbclid=IwAR05nZz1qhTRad9pH_cQ6nHDGShKExKoJCVAy_T1oRX7nM9iANIAyMH3BB0', '2022-03-06 13:28:50', '2022-03-14 13:19:02');
+(8, '1647357845.png', '1647357960.png', '1647415332.jpeg', 'NEW ARRIVALES', 'Best Price This Year', 'Welcome to our AgroBd shop', 'You Can Directly Go On Shop', 'You Can Directly Go On News', 'You Can Directly Go Contact', '1647359164.jpg', '1646758941.jpg', '1646758941.png', '1647359936.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', '1647360800.jpg', 'MID SEASON\'S SALE', 'MID SEASON\'S SALE Autumn Collection UP TO 20% OFF', '1646760930.jpg', '1646760930.jpg', '1647360881.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 'Dhaka, Bangladesh', '01316057864', 'abu15-13860@diu.edu.bd', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', 'https://www.facebook.com/profile.php?id=100010098828694', 'https://github.com/abunaiim25', 'https://www.linkedin.com/in/abu-naiim-516949210/', 'https://www.instagram.com/abu_naiim/?fbclid=IwAR05nZz1qhTRad9pH_cQ6nHDGShKExKoJCVAy_T1oRX7nM9iANIAyMH3BB0', '2022-03-06 13:28:50', '2022-03-16 01:22:13');
 
 -- --------------------------------------------------------
 
@@ -284,7 +284,53 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (41, '2022_03_11_151318_create_order_payments_table', 16),
 (43, '2022_03_11_171339_create_orderitem_payments_table', 17),
 (44, '2022_03_12_160516_create_ratings_table', 18),
-(45, '2022_03_13_180743_create_reviews_table', 19);
+(51, '2022_03_13_180743_create_reviews_table', 19),
+(52, '2022_03_16_091753_create_my_businesses_table', 19),
+(53, '2022_03_17_064338_create_rating_businesses_table', 20),
+(54, '2022_03_17_064533_create_review_businesses_table', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `my_businesses`
+--
+
+CREATE TABLE `my_businesses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_quantity` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `product_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_one` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_two` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_three` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_four` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 1,
+  `user_id` int(11) DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `village` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `road` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `police_station` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `post_office` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `post_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `personal_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `my_businesses`
+--
+
+INSERT INTO `my_businesses` (`id`, `category`, `product_name`, `product_quantity`, `product_description`, `price`, `image_one`, `image_two`, `image_three`, `image_four`, `status`, `user_id`, `phone`, `email`, `name`, `village`, `road`, `district`, `police_station`, `post_office`, `country`, `post_code`, `personal_description`, `created_at`, `updated_at`) VALUES
+(2, 'Fruits', 'Orange', '30', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '220', '1647438148.jpg', '1647438148.jpg', '1647438148.jpg', '1647438148.jpg', 1, 6, '01316057864', 'abu15-13860@diu.edu.bd', 'Abu Naiim', 'Model Town', 'Block-B', 'Dhaka', 'Keranigonj Model', 'Keranigonj', 'Bangladesh', '1310', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-16 07:42:28', '2022-03-16 23:57:25'),
+(3, 'Vegetable', 'Vegetable various', '25', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Subject to discussion', '1647457442.jpg', '1647457442.jpg', '1647457442.jpg', '1647457470.jpeg', 1, 7, '01785643672', 'mdnaiim13@gmail.com', 'Apurbo', 'Model Town', 'Block-B', 'Chandpur', 'Keranigonj Model', 'Keranigonj', 'Bangladesh', '1232', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-16 08:31:21', '2022-03-16 13:07:03'),
+(6, 'Beef', 'Beef', '20', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '550', '1647615950.jpg', '1647615950.jpg', '1647615950.jpg', '1647615950.jpg', 1, 6, '01316057864', 'abu15-13860@diu.edu.bd', 'Abu Naiim', 'Model Town', 'Block-B', 'Chandpur', 'Keranigonj Model', 'Keranigonj', 'Bangladesh', '1232', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-18 09:05:50', '2022-03-19 02:46:31');
 
 -- --------------------------------------------------------
 
@@ -309,9 +355,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `image`, `title`, `category`, `place`, `writer_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, '1645903635.jpg', 'iPhone 13 Pro Max, iPhone 13', 'iPhone', 'Dhaka, Bangladesh', 'Naiim', 'All of the iPhone 13 models feature the same OLED Super Retina XDR display, which is flexible and extends right into the chassis of each device. There\'s a 2,000,000:1 contrast ratio for blacker blacks and brighter whites, and up to 1200 nits peak brightness for HDR photos, videos, TV shows, and movies.All of the iPhone 13 models feature the same OLED Super Retina XDR display, which is flexible and extends right into the chassis of each device. There\'s a 2,000,000:1 contrast ratio for blacker blacks and brighter whites, and up to 1200 nits peak brightness for HDR photos, videos, TV shows, and movies', '2022-02-26 13:27:15', '2022-02-26 13:27:15'),
-(2, '1645903885.jpg', 'Samsung, South Korean company', 'Samsung', 'Korean', 'rayhan', 'Samsung, South Korean company that is one of the world\'s largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.Samsung, South Korean company that is one of the world\'s largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.Samsung, South Korean company that is one of the world\'s largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.Samsung, South Korean company that is one of the world\'s largest producers of electronic devices. Samsung specializes in the production of a wide variety of consumer and industry electronics, including appliances, digital media devices, semiconductors, memory chips, and integrated systems.', '2022-02-26 13:29:57', '2022-02-26 13:31:25'),
-(4, '1645981380.jpeg', 'Apex footwear brings you an exclusive range of shoes, slippers', 'Apex', 'Dhaka', 'Fahim Ahmed', 'Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.Apex footwear brings you an exclusive range of shoes, slippers, sandals, and clothing for men, women & kids. Buy shoes online and enroll in Apex rewards.', '2022-02-27 11:03:00', '2022-02-27 11:03:00');
+(1, '1647372293.jpg', 'Top mango varieties in Bangladesh', 'Fruits', 'Dhaka, Bangladesh', 'Abu Naiim', 'Who does not love mangoes – with their unique flavor, fragrance and texture? The King among Fruit is thriving very well in Bangladesh, thanks to the modern methods of horticulture that are used to nurture the mango trees. Mangoes grow widely all over Bangladesh and there are innumerable varieties to charm the connoisseur. Each variety has its own admirers. Some of the better mangoes are the superior grafted varieties whereas the local or Deshi aam is grown from seedlings.Who does not love mangoes – with their unique flavor, fragrance and texture? The King among Fruit is thriving very well in Bangladesh, thanks to the modern methods of horticulture that are used to nurture the mango trees. Mangoes grow widely all over Bangladesh and there are innumerable varieties to charm the connoisseur. Each variety has its own admirers. Some of the better mangoes are the superior grafted varieties whereas the local or Deshi aam is grown from seedlings.Who does not love mangoes – with their unique flavor, fragrance and texture? The King among Fruit is thriving very well in Bangladesh, thanks to the modern methods of horticulture that are used to nurture the mango trees. Mangoes grow widely all over Bangladesh and there are innumerable varieties to charm the connoisseur. Each variety has its own admirers. Some of the better mangoes are the superior grafted varieties whereas the local or Deshi aam is grown from seedlings.', '2022-03-15 13:16:44', '2022-03-15 13:24:53'),
+(2, '1647372267.jpg', 'What is agriculture shop?', 'Shop', 'Dhaka', 'Naiim', 'An agricultural supply store or agrocenter is an agriculturally-oriented shop where one sells agricultural supplies—inputs required for agricultural production such as pesticides, feed and fertilizers .An agricultural supply store or agrocenter is an agriculturally-oriented shop where one sells agricultural supplies—inputs required for agricultural production such as pesticides, feed and fertilizers .An agricultural supply store or agrocenter is an agriculturally-oriented shop where one sells agricultural supplies—inputs required for agricultural production such as pesticides, feed and fertilizers .An agricultural supply store or agrocenter is an agriculturally-oriented shop where one sells agricultural supplies—inputs required for agricultural production such as pesticides, feed and fertilizers .', '2022-03-15 13:24:27', '2022-03-15 13:24:27'),
+(3, '1647417140.jpg', 'Rice price high despite new crop, ample imports', 'Rice', 'Dhaka, Bangladesh', 'Rayhan', 'Different varieties of rice cultivated by farmers in surrounding villages being sold for Tk 1,400 to Tk 2,000 per maund (around 37 kilogrammes) at a centuries-old floating market sitting every Saturday and Tuesday on the Sandha river in Barishal’s Banaripara upazila. The photo was taken yesterday. Photo: Titu Das.Different varieties of rice cultivated by farmers in surrounding villages being sold for Tk 1,400 to Tk 2,000 per maund (around 37 kilogrammes) at a centuries-old floating market sitting every Saturday and Tuesday on the Sandha river in Barishal’s Banaripara upazila. The photo was taken yesterday. Photo: Titu Das', '2022-03-16 01:52:20', '2022-03-16 01:52:20');
 
 -- --------------------------------------------------------
 
@@ -385,9 +431,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `invoice_no`, `payment_type`, `total`, `subtotal`, `discount_percentage`, `status`, `created_at`, `updated_at`) VALUES
-(60, 7, '34210922', 'HandCash', '5000', '5000', NULL, 1, '2022-03-12 07:18:29', '2022-03-12 09:03:34'),
-(61, 5, '64126882', 'HandCash', '5000', '5000', NULL, 1, '2022-03-12 09:02:24', '2022-03-12 09:03:29'),
-(64, 5, '87398482', 'HandCash', '5000', '5000', NULL, 0, '2022-03-13 09:21:37', NULL);
+(1, 5, '61439009', 'HandCash', '1170', '1300', 10, 0, '2022-03-15 12:13:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -409,11 +453,7 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `product_qty`, `created_at`, `updated_at`) VALUES
-(66, 60, 13, 1, '2022-03-12 07:18:29', NULL),
-(67, 61, 13, 1, '2022-03-12 09:02:25', NULL),
-(68, 62, 11, 1, '2022-03-12 09:08:19', NULL),
-(69, 63, 13, 1, '2022-03-12 13:28:23', NULL),
-(70, 64, 13, 1, '2022-03-13 09:21:37', NULL);
+(1, 1, 16, 2, '2022-03-15 12:13:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -433,20 +473,6 @@ CREATE TABLE `order_payments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `order_payments`
---
-
-INSERT INTO `order_payments` (`id`, `user_id`, `invoice_no`, `payment_type`, `total`, `subtotal`, `discount_percentage`, `status`, `created_at`, `updated_at`) VALUES
-(7, 5, '20950502', NULL, '2100', '2100', NULL, 1, '2022-03-11 11:27:56', '2022-03-11 12:11:59'),
-(12, 6, '34405841', NULL, '5000', '5000', NULL, 1, '2022-03-12 11:11:10', '2022-03-13 04:17:50'),
-(13, 5, '20039597', NULL, '4500', '5000', 10, 0, '2022-03-12 11:33:15', NULL),
-(15, 5, '54035032', NULL, '1080', '1200', 10, 0, '2022-03-12 11:47:23', NULL),
-(19, 5, '88319493', NULL, '5000', '5000', NULL, 0, '2022-03-12 13:46:29', NULL),
-(20, 5, '53080560', NULL, '5000', '5000', NULL, 0, '2022-03-13 00:28:28', NULL),
-(25, 5, '65339671', NULL, '200', '200', NULL, 0, '2022-03-13 01:02:57', NULL),
-(26, 5, '86914766', NULL, '200', '200', NULL, 0, '2022-03-13 08:19:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -492,24 +518,6 @@ CREATE TABLE `payments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `payments`
---
-
-INSERT INTO `payments` (`id`, `order_id`, `amount`, `name`, `email`, `phone`, `address`, `state`, `post_code`, `transaction_id`, `currency`, `user_id`, `status`, `description`, `created_at`, `updated_at`) VALUES
-(5, 4, '11200', 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', 'Bangladesh', 1232, '622b824ba8f35', 'BDT', '5', 'Pending', '', '2022-03-11 11:09:32', '2022-03-11 11:09:32'),
-(6, 7, '2100', 'Admin', 'naiimabu25@gmail.com', '01785643672', 'Dhaka', 'Bangladesh', 1232, '622b869c077ab', 'BDT', '5', 'Pending', '', '2022-03-11 11:27:56', '2022-03-11 11:27:56'),
-(11, 12, '5000', 'Abu Naiim', 'abu15-13860@diu.edu.bd', '01785643672', 'Dhaka', 'Bangladesh', 1310, '622cd42eedae7', 'BDT', '6', 'Processing', '', '2022-03-12 11:11:11', '2022-03-12 11:11:11'),
-(12, 13, '4500', 'Admin', 'abu15-13860@diu.edu.bd', '01785643672', 'Dhaka', 'Bangladesh', 1340, '622cd95b589ee', 'BDT', '5', 'Processing', '', '2022-03-12 11:33:15', '2022-03-12 11:33:15'),
-(13, 15, '1200', 'Admin', 'naiimabu25@gmail.com', '01316057864', 'syi mhf jkhf', 'cdfg', 1232, '622cdcabe9f2d', 'BDT', '5', 'Processing', '', '2022-03-12 11:47:24', '2022-03-12 11:47:24'),
-(14, 19, '5000', 'Admin', 'naiimabu25@gmail.com', '01785643672', 'Dhaka', 'Bangladesh', 1318, '622cf8954c95a', 'BDT', '5', 'Processing', '', '2022-03-12 13:46:29', '2022-03-12 13:46:29'),
-(19, 25, '200', 'Md Rayhan', 'naiimabu25@gmail.com', '01785643672', 'Keranigong, Dhaka', 'BD', 1310, '622d9721bace9', 'BDT', '5', 'Processing', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including .', '2022-03-13 01:02:58', '2022-03-13 03:46:56'),
-(20, NULL, '200', NULL, NULL, NULL, 'Dhaka', 'Bangladesh', 1232, '622db7ad2cbc6', 'BDT', '5', 'Pending', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-13 03:21:49', '2022-03-13 03:21:49'),
-(21, NULL, '200', 'md', 'naiimabu25@gmail.com', '01785643672', 'Dhaka', 'Bangladesh', 1232, '622db98058749', 'BDT', '5', 'Pending', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-13 03:29:36', '2022-03-13 03:29:36'),
-(22, NULL, '200', 'Admin', 'naiimabu25@gmail.com', '01785643672', 'Dhaka', 'BD', 1232, '622dba3f98cfb', 'BDT', '5', 'Pending', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-13 03:32:47', '2022-03-13 03:32:47'),
-(23, NULL, '200', 'Admin', 'naiimabu25@gmail.com', '01785643672', 'Keranigong, Dhaka', 'Bangladesh', 1232, '622dba9210cb2', 'BDT', '5', 'Pending', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-13 03:34:10', '2022-03-13 03:34:10'),
-(24, 26, '200', 'Admin', 'naiimabu25@gmail.com', '01785643672', 'Candpur', 'Bangladesh', 1310, '622dfd61d6b73', 'BDT', '5', 'Processing', 'Something write about shopping if any (optional):', '2022-03-13 08:19:14', '2022-03-13 08:19:14');
 
 -- --------------------------------------------------------
 
@@ -559,13 +567,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `brand_id`, `product_name`, `product_slug`, `product_code`, `product_quantity`, `description`, `price`, `image_one`, `image_two`, `image_three`, `image_four`, `status`, `created_at`, `updated_at`) VALUES
-(6, 1, 3, 'Shoe', NULL, '12341', '14', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 300, '1644056929.jpg', '1644056929.jpg', '1644056929.jpg', '1644056929.jpg', 1, '2022-02-05 04:28:49', '2022-03-11 12:17:45'),
-(7, 3, 3, 'Watch', NULL, '40943', '2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 500, '1644063644.jpg', '1644063644.jfif', '1644063644.jfif', '1644063644.jpg', 1, '2022-02-05 06:20:44', '2022-03-11 11:27:56'),
-(8, 1, 4, 'Shoe Bata', NULL, '20983', '8', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 1200, '1644063773.jpg', '1644063773.jpg', '1644063773.jpg', '1644063773.jpg', 1, '2022-02-05 06:22:53', '2022-03-12 11:47:24'),
-(9, 1, 5, 'Apex Shoe', '', '20987', '0', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1100, '1644063889.jpg', '1644063889.jpg', '1644063889.jpg', '1644063889.jpg', 1, '2022-02-05 06:24:49', '2022-02-20 12:18:40'),
-(10, 3, 5, 'Watch 12', NULL, '3456', '0', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 1200, '1644261914.jpg', '1644143153.jfif', '1644143153.jpg', '1644143153.jpg', 1, '2022-02-06 04:25:53', '2022-02-15 04:39:15'),
-(11, 3, 5, 'Watch 133', 'Watch_133', '1894', '17', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 200, '1647154838.jpg', '1644145742.jfif', '1644145742.jpg', '1644145742.jpg', 1, '2022-02-06 05:09:02', '2022-03-13 08:19:14'),
-(13, 1, 3, 'Niky Fatafati', 'Niky_4098', '30332', '19', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 5000, '1644502971.jpg', '1644502971.jpg', '1644502971.jpg', '1644502971.jpg', 1, '2022-02-10 08:22:51', '2022-03-13 09:21:37');
+(14, 5, 8, 'Sea Fish', 'sea_fish', '12341', '10', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', 2000, '1647363996.jpg', '1647363996.jpg', '1647363996.jpg', '1647364422.jpg', 1, '2022-03-15 11:06:36', '2022-03-15 11:15:06'),
+(15, 6, 7, 'Mango', 'mango', '1456', '20', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.', 300, '1647364894.jpg', '1647364894.jpg', '1647364894.jpg', '1647364894.jpg', 1, '2022-03-15 11:21:34', '2022-03-15 11:21:34'),
+(16, 3, 6, 'Beef', '', '3456', '28', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable sourceContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source', 650, '1647367488.jpg', '1647367488.jpg', '1647367488.jpg', '1647367488.jpg', 1, '2022-03-15 12:04:48', '2022-03-15 12:13:00'),
+(17, 7, 7, 'Vegitable various', 'vegitable_various', '1267', '30', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 30, '1647416359.jpg', '1647416359.jpg', '1647416359.jpg', '1647416359.jpg', 1, '2022-03-16 01:39:19', '2022-03-16 01:39:19'),
+(18, 6, 6, 'Apple', 'apple', '1467', '25', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy.', 180, '1647416659.jpg', '1647416659.jpg', '1647416659.jpg', '1647416659.jpg', 1, '2022-03-16 01:44:19', '2022-03-16 01:44:19');
 
 -- --------------------------------------------------------
 
@@ -587,11 +593,35 @@ CREATE TABLE `ratings` (
 --
 
 INSERT INTO `ratings` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, `updated_at`) VALUES
-(1, '5', '13', '2', '2022-03-12 11:07:31', '2022-03-15 01:11:13'),
-(2, '5', '11', '4', '2022-03-13 05:58:11', '2022-03-15 01:08:54'),
-(3, '6', '11', '4', '2022-03-13 09:05:06', '2022-03-13 09:05:06'),
-(4, '5', '8', '3', '2022-03-14 13:23:16', '2022-03-14 13:23:16'),
-(5, '6', '13', '3', '2022-03-15 00:56:25', '2022-03-15 00:56:25');
+(1, '6', '18', '3', '2022-03-17 00:40:53', '2022-03-26 08:27:44'),
+(2, '6', '17', '3', '2022-03-17 00:41:12', '2022-03-17 00:41:12'),
+(3, '6', '16', '5', '2022-03-17 00:41:28', '2022-03-17 00:41:28'),
+(4, '6', '15', '4', '2022-03-17 00:54:56', '2022-03-17 00:54:56'),
+(5, '5', '15', '4', '2022-03-28 09:27:52', '2022-03-28 09:27:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rating_businesses`
+--
+
+CREATE TABLE `rating_businesses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stars_rated` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `rating_businesses`
+--
+
+INSERT INTO `rating_businesses` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, `updated_at`) VALUES
+(1, '6', '3', '4', '2022-03-17 00:54:39', '2022-03-17 03:51:26'),
+(2, '6', '2', '5', '2022-03-17 04:05:00', '2022-03-17 04:05:00'),
+(3, '6', '6', '4', '2022-03-18 09:06:06', '2022-03-18 09:06:06');
 
 -- --------------------------------------------------------
 
@@ -613,16 +643,36 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `user_id`, `prod_id`, `user_review`, `created_at`, `updated_at`) VALUES
-(1, '5', '11', 'Watch 133 combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2022-03-13 13:21:09', '2022-03-14 13:15:41'),
-(2, '5', '13', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2022-03-13 13:47:57', '2022-03-13 13:47:57'),
-(3, '5', '13', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal new hello bro', '2022-03-13 13:53:44', '2022-03-14 13:07:53'),
-(4, '6', '13', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock', '2022-03-13 13:55:14', '2022-03-13 13:55:14'),
-(5, '7', '13', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', '2022-03-13 14:09:31', '2022-03-13 14:09:31'),
-(11, '6', '13', 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is avaible.', '2022-03-14 09:34:46', '2022-03-14 11:24:22'),
-(12, '7', '11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2022-03-14 12:22:33', '2022-03-14 12:22:33'),
-(13, '7', '11', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,', '2022-03-14 12:22:54', '2022-03-14 12:22:54'),
-(14, '7', '11', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text.', '2022-03-14 12:24:49', '2022-03-14 12:24:49'),
-(16, '5', '11', 'it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '2022-03-15 01:08:12', '2022-03-15 01:08:12');
+(1, '6', '15', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures hi', '2022-03-17 04:06:25', '2022-03-17 07:50:27'),
+(2, '6', '18', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout', '2022-03-22 10:58:24', '2022-03-22 10:58:24'),
+(3, '6', '18', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout', '2022-03-22 10:58:32', '2022-03-22 10:58:32'),
+(4, '6', '16', 'Hello I am abu naiim', '2022-03-26 08:30:03', '2022-03-26 08:30:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review_businesses`
+--
+
+CREATE TABLE `review_businesses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_review` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `review_businesses`
+--
+
+INSERT INTO `review_businesses` (`id`, `user_id`, `prod_id`, `user_review`, `created_at`, `updated_at`) VALUES
+(2, '6', '2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-03-17 04:05:48', '2022-03-17 04:05:48'),
+(3, '7', '3', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '2022-03-17 05:16:42', '2022-03-17 05:16:42'),
+(5, '6', '3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet. Abu Naiim', '2022-03-17 07:35:10', '2022-03-17 08:00:28'),
+(6, '6', '3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', '2022-03-17 08:01:21', '2022-03-17 08:01:21'),
+(7, '6', '3', 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', '2022-03-17 08:03:59', '2022-03-17 08:03:59');
 
 -- --------------------------------------------------------
 
@@ -644,9 +694,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('dHn4usZHvAkZ3n6gYEjF1qgB7qln0G8IMgYZmgYQ', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRzdnZWR3bDQzeW9jaGgyaGNmeDhaTVFISVZSQUYzQWRXQkw5N2Y4bSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0X2RldGFpbHMvMTMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo2O3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkWjhIRm8wTVdXZ1Q4WmxmaXFsWTU2dUZQM2pjWks2ZXQ3OS9xM3pCVHhNQzlTUGNvSENBcTIiO30=', 1647328724),
-('eJiPt5bcqTvb48gUljCUEsbqaOMZOBFi1V4a65VP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMTRjUmZJbkFhMWhHSThEZ21qWVlXWERIYkZmWGNZak5IRWdUMWQwTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1647360231),
-('yDFSHLVp4PHMB6UwZs4Rw4yrb5GNblPhKL7jucmi', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNUQyZVE5NFp3MW53d3dyYjI0bUxDUHhjMkdsZDM0azJ3eENvMzZVSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1647356037);
+('l4lvOXqqZWEwQKVtr2MJ04BPip3wPgPoznoHhI9S', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSmxrNzYwOFdENmFlYThYcnYzdzN0Rmdwc2t3bGpkeGJQNzkwNlMzUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzX2RldGFpbHMvMyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjU7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRqZld6c3ZDVnhIeGZva2hNYnd1QWp1b0xLS0h0M00vSzl0cVFpdnJSSUppanpyLm9ZNWgyZSI7fQ==', 1648490087);
 
 -- --------------------------------------------------------
 
@@ -677,7 +725,8 @@ INSERT INTO `shippings` (`id`, `user_id`, `order_id`, `shipping_name`, `shipping
 (43, 7, 60, 'Apurbo', 'mdnaiim13@gmail.com', '01316057864', 'Dhaka', 'BD', NULL, 1232, '2022-03-12 07:18:29', NULL),
 (44, 5, 61, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', 'Bangladesh', NULL, 1232, '2022-03-12 09:02:25', NULL),
 (45, 5, 62, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', 'Bangladesh', NULL, 1232, '2022-03-12 09:08:19', NULL),
-(46, 5, 64, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', 'Bangladesh', NULL, 1232, '2022-03-13 09:21:37', NULL);
+(46, 5, 64, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', 'Bangladesh', NULL, 1232, '2022-03-13 09:21:37', NULL),
+(47, 5, 1, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Candpur', 'Bangladesh', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source', 1314, '2022-03-15 12:13:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -701,8 +750,8 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `team_img`, `team_name`, `team_designation`, `team_txt`, `team_email`, `created_at`, `updated_at`) VALUES
-(2, '1645902015.jpeg', 'Abu Naiim', 'CEO & Founder of AgroBd', ' I am a Software Engineer and I am studying frojm Daffodil International University', 'abu15-13860@diu.edu.bd', '2022-02-26 13:00:15', '2022-02-26 13:00:15'),
-(3, '1645904968.jpg', 'Rayhan', 'Co-founder', 'I am a student of Daffodil International University && I am a Software Engineer', 'naiimabu25@gmail.com', '2022-02-26 13:49:28', '2022-02-26 13:49:28');
+(2, '1647368913.jpg', 'Abu Naiim', 'CEO & Founder of AgroBd and Software Engineer', 'I am a Software Engineer and I am studying frojm Daffodil International University', 'abu15-13860@diu.edu.bd', '2022-02-26 13:00:15', '2022-03-15 12:28:33'),
+(3, '1647368921.jpeg', 'Rayhan', 'Co-founder', 'I am a student of Daffodil International University && I am a Software Engineer', 'naiimabu25@gmail.com', '2022-02-26 13:49:28', '2022-03-15 12:28:41');
 
 -- --------------------------------------------------------
 
@@ -735,7 +784,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `address`, `usertype`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
 (5, 'Admin', 'naiimabu25@gmail.com', '01316057864', 'Dhaka', '1', '2022-02-19 11:56:15', '$2y$10$jfWzsvCVxHxfokhMbwuAjuoLKKHt3M/K9tqQivrRIJijzr.oY5h2e', NULL, NULL, NULL, NULL, NULL, '2022-02-19 11:53:58', '2022-02-19 11:56:15'),
 (6, 'Abu Naiim', 'abu15-13860@diu.edu.bd', '01316057864', 'Dhaka', '0', '2022-02-19 12:20:28', '$2y$10$Z8HFo0MWWgT8ZlfiqlY56uFP3jcZK6et79/q3zBTxMC9SPcoHCAq2', NULL, NULL, NULL, NULL, NULL, '2022-02-19 12:20:04', '2022-02-19 12:45:13'),
-(7, 'Apurbo', 'mdnaiim13@gmail.com', '01785643672', 'Candpur', '1', '2022-03-09 08:55:41', '$2y$10$eAl5FNCDAMYw1JEx/6RnCuZ1qk9K1S6QZjj6hzLhw0tqKPgHcNRVO', NULL, NULL, NULL, NULL, NULL, '2022-03-09 08:44:55', '2022-03-09 10:54:10');
+(7, 'Apurbo', 'mdnaiim13@gmail.com', '01785643672', 'Candpur', '0', '2022-03-09 08:55:41', '$2y$10$eAl5FNCDAMYw1JEx/6RnCuZ1qk9K1S6QZjj6hzLhw0tqKPgHcNRVO', NULL, NULL, NULL, NULL, NULL, '2022-03-09 08:44:55', '2022-03-16 13:01:38');
 
 -- --------------------------------------------------------
 
@@ -756,9 +805,7 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(5, 6, 8, NULL, '2022-02-21 09:25:53'),
-(6, 6, 11, NULL, '2022-02-21 12:05:02'),
-(8, 5, 11, NULL, '2022-03-13 01:02:15');
+(1, 5, 15, NULL, '2022-03-15 13:28:38');
 
 --
 -- Indexes for dumped tables
@@ -817,6 +864,12 @@ ALTER TABLE `front_controls`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `my_businesses`
+--
+ALTER TABLE `my_businesses`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -889,9 +942,21 @@ ALTER TABLE `ratings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rating_businesses`
+--
+ALTER TABLE `rating_businesses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `review_businesses`
+--
+ALTER TABLE `review_businesses`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -941,31 +1006,31 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `discounts`
 --
 ALTER TABLE `discounts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -983,13 +1048,19 @@ ALTER TABLE `front_controls`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `my_businesses`
+--
+ALTER TABLE `my_businesses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orderitem_payments`
@@ -1001,25 +1072,25 @@ ALTER TABLE `orderitem_payments`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_payments`
 --
 ALTER TABLE `order_payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1031,7 +1102,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `ratings`
@@ -1040,16 +1111,28 @@ ALTER TABLE `ratings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `rating_businesses`
+--
+ALTER TABLE `rating_businesses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `review_businesses`
+--
+ALTER TABLE `review_businesses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `shippings`
 --
 ALTER TABLE `shippings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `teams`
@@ -1067,7 +1150,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
