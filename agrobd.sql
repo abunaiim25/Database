@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 06:10 PM
+-- Generation Time: May 09, 2022 at 08:36 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -240,7 +240,7 @@ CREATE TABLE `front_controls` (
 --
 
 INSERT INTO `front_controls` (`id`, `logo_big`, `logo_small`, `home_bg_img`, `home_bg_txt1`, `home_bg_txt2`, `home_bg_txt3`, `home_new_txt1`, `home_new_txt2`, `home_new_txt3`, `home_new_txt1_img`, `home_new_txt2_img`, `home_new_txt3_img`, `home_banner_img`, `home_banner_txt1`, `home_banner_txt2`, `shop_banner_img`, `shop_banner_txt1`, `shop_banner_txt2`, `about_banner_img`, `contact_banner_img`, `myorder_banner_img`, `myorder_banner_txt1`, `myorder_banner_txt2`, `footer_text`, `footer_contact_address`, `footer_contact_phone`, `footer_contact_email`, `footer_iteam_img_1`, `footer_iteam_img_2`, `footer_iteam_img_3`, `footer_iteam_img_4`, `footer_iteam_img_5`, `footer_iteam_img_6`, `footer_social_fb`, `footer_social_twitter`, `footer_social_linkedin`, `footer_social_insta`, `created_at`, `updated_at`) VALUES
-(8, '1647357845.png', '1647357960.png', '1652107553.jpg', 'NEW ARRIVALES', 'Best Price This Year', 'Welcome to our AgroBd shop', 'You Can Directly Go On Shop', 'You Can Directly Go On News', 'You Can Directly Go Contact', '1647359164.jpg', '1646758941.jpg', '1646758941.png', '1647359936.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', '1647360800.jpg', 'MID SEASON\'S SALE', 'MID SEASON\'S SALE Autumn Collection UP TO 20% OFF', '1646760930.jpg', '1646760930.jpg', '1647360881.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 'Dhaka, Bangladesh', '01316057864', 'abu15-13860@diu.edu.bd', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', 'https://www.facebook.com/profile.php?id=100010098828694', 'https://github.com/abunaiim25', 'https://www.linkedin.com/in/abu-naiim-516949210/', 'https://www.instagram.com/abu_naiim/?fbclid=IwAR05nZz1qhTRad9pH_cQ6nHDGShKExKoJCVAy_T1oRX7nM9iANIAyMH3BB0', '2022-03-06 13:28:50', '2022-05-09 08:45:53');
+(8, '1647357845.png', '1647357960.png', '1652120956.jpg', 'NEW ARRIVALES', 'Best Price This Year', 'Welcome to our AgroBd shop', 'You Can Directly Go On Shop', 'You Can Directly Go On News', 'You Can Directly Go Contact', '1647359164.jpg', '1646758941.jpg', '1646758941.png', '1647359936.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', '1647360800.jpg', 'MID SEASON\'S SALE', 'MID SEASON\'S SALE Autumn Collection UP TO 20% OFF', '1646760930.jpg', '1646760930.jpg', '1647360881.jpg', 'MID SEASON\'S SALE', 'Autumn Collection UP TO 20% OFF', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s,', 'Dhaka, Bangladesh', '01316057864', 'abu15-13860@diu.edu.bd', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', '1647367173.jpg', 'https://www.facebook.com/profile.php?id=100010098828694', 'https://github.com/abunaiim25', 'https://www.linkedin.com/in/abu-naiim-516949210/', 'https://www.instagram.com/abu_naiim/?fbclid=IwAR05nZz1qhTRad9pH_cQ6nHDGShKExKoJCVAy_T1oRX7nM9iANIAyMH3BB0', '2022-03-06 13:28:50', '2022-05-09 12:29:16');
 
 -- --------------------------------------------------------
 
@@ -597,7 +597,8 @@ INSERT INTO `ratings` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, 
 (2, '6', '17', '3', '2022-03-17 00:41:12', '2022-03-17 00:41:12'),
 (3, '6', '16', '5', '2022-03-17 00:41:28', '2022-03-17 00:41:28'),
 (4, '6', '15', '4', '2022-03-17 00:54:56', '2022-03-17 00:54:56'),
-(5, '5', '15', '4', '2022-03-28 09:27:52', '2022-03-28 09:27:52');
+(5, '5', '15', '4', '2022-03-28 09:27:52', '2022-03-28 09:27:52'),
+(6, '5', '14', '3', '2022-05-09 12:30:54', '2022-05-09 12:30:54');
 
 -- --------------------------------------------------------
 
@@ -694,7 +695,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('9RhBQndQGfp7drBmlQJEyW8PLk1s56QnxyrdTxmQ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicjdtaFJYUXVHSHBZREVDaklKc2I3M3JraEJ1TjRYVEFJYUd1WGkzOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1652112187),
+('5KowPI6DjomnOwEb7Y1tr9i1a7bebnYOFBffxI7E', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZnNzd0pFT1JlM3FXRHBXOXZGa2xpcm15VUhyTXVhaEhkZld3MUZiUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0X2RldGFpbHMvMTQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo1O3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkamZXenN2Q1Z4SHhmb2toTWJ3dUFqdW9MS0tIdDNNL0s5dHFRaXZyUklKaWp6ci5vWTVoMmUiO30=', 1652121054),
+('9RhBQndQGfp7drBmlQJEyW8PLk1s56QnxyrdTxmQ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicjdtaFJYUXVHSHBZREVDaklKc2I3M3JraEJ1TjRYVEFJYUd1WGkzOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1652112657),
 ('gy7oLCK0LhKnQM2i2Zwqi8PLjNGRXFFHnqp3gBPv', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:100.0) Gecko/20100101 Firefox/100.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSFQzNmxpcjhqNmtpSXQ5WkozNUFRZGxVNXpFSk1wTUJJM1cwbUg1QyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zaG9wIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2MDoiJDJ5JDEwJGpmV3pzdkNWeEh4Zm9raE1id3VBanVvTEtLSHQzTS9LOXRxUWl2clJJSmlqenIub1k1aDJlIjt9', 1652109218),
 ('l4lvOXqqZWEwQKVtr2MJ04BPip3wPgPoznoHhI9S', 5, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSmxrNzYwOFdENmFlYThYcnYzdzN0Rmdwc2t3bGpkeGJQNzkwNlMzUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzX2RldGFpbHMvMyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjU7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjA6IiQyeSQxMCRqZld6c3ZDVnhIeGZva2hNYnd1QWp1b0xLS0h0M00vSzl0cVFpdnJSSUppanpyLm9ZNWgyZSI7fQ==', 1648490087);
 
@@ -1110,7 +1112,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rating_businesses`
