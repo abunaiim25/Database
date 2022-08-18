@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2022 at 10:53 AM
+-- Generation Time: Aug 09, 2022 at 08:06 PM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.27
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -193,6 +193,13 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('naiimabu25@gmail.com', '$2y$10$yd/BS5utNPMO.9WLw2WV1OykmZQFA.QRqekv7lS.8XYgixcISldWG', '2022-08-08 08:10:07');
+
 -- --------------------------------------------------------
 
 --
@@ -216,7 +223,8 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `created_at`, `updated_at`) VALUES
-(89, 'App\\Models\\User', 7, 'naiimabu25@gmail.com_AdminToken', '4ca0bec0c6b4bae895c209b1b73d881ad965ec9fb21dfdf271768d1f3e79499e', '[\"server:admin\"]', '2022-07-23 02:46:18', '2022-07-22 23:17:30', '2022-07-23 02:46:18');
+(91, 'App\\Models\\User', 10, 'naiimabu@gmail.com_Token', '9a16d97cceaf29425b5230c06ba589134de3851e03185ad5bd8d4dcb1a97140f', '[\"*\"]', NULL, '2022-07-30 03:50:53', '2022-07-30 03:50:53'),
+(105, 'App\\Models\\User', 8, 'abu15-13860@diu.edu.bd_Token', 'a6c5b43eabbf029466463062c08ba791f3b830028ab4af8914e1c8e8dc640d19', '[\"\"]', NULL, '2022-08-08 08:22:01', '2022-08-08 08:22:01');
 
 -- --------------------------------------------------------
 
@@ -278,9 +286,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `role_as`, `created_at`, `updated_at`) VALUES
-(7, 'Admin', 'naiimabu25@gmail.com', NULL, '$2y$10$OY2EFGzMmPVapKWC8tbzwOGecVPnbc8Zcqf9Dka.mqyxsfyrM9Fg.', NULL, 1, '2022-06-22 13:28:13', '2022-06-22 13:28:13'),
-(8, 'User Me', 'abu15-13860@diu.edu.bd', NULL, '$2y$10$I0gQBbLZTWE/9D7LbGEzS.0CrJMFnUe8TyrFaRJgwChvNBCdBeKUG', NULL, 0, '2022-06-22 13:35:08', '2022-06-22 13:35:08'),
-(9, 'Rayhan', 'abunaiim4@gmail.com', NULL, '$2y$10$/IEVnztefz4DXEMRN5tv9.pVciloqwFwe2XEJyewRwBsMmxO6C55K', NULL, 0, '2022-07-19 11:07:22', '2022-07-19 11:07:22');
+(7, 'Admin', 'naiimabu25@gmail.com', NULL, '$2y$10$jh9otRSrDv3QcDAhWFbCtecmpWdFnkb8olClvgyhFzGwtPnw2vVs6', 'itTKa53OvfXvO9J1XmAIkh2DTw3fmjQ2uDKHz2PUm24w5SUvO07YoFo6Lfrr', 1, '2022-06-22 13:28:13', '2022-08-01 09:34:12'),
+(8, 'User Me', 'abu15-13860@diu.edu.bd', NULL, '$2y$10$CbgVSjuDPYowVwfQT0Z35uscmyExatSgX3p.8NlitECt21ISVfy3C', 'Tc1JbYmkE3yy8wui0UnZilDZi6SRCAXu9MQe1S8BrZ33aFiXwcUVV0iolarq', 0, '2022-06-22 13:35:08', '2022-08-08 08:21:35'),
+(9, 'Rayhan', 'abunaiim4@gmail.com', NULL, '$2y$10$UqPxxjw11NqcHx1GfOwMwOpKZLbrXnQIgBlT6b2BwSLggeT0IH/P6', '7Z4oxasCVbFHMeHoJZRvgD4gZt8tUWaYOYMZFq8iILeoKgePFzdvJYBVaEJu', 0, '2022-07-19 11:07:22', '2022-08-07 11:16:27'),
+(11, 'Abu sakib', 'abu1513860@diu.edu.bd', NULL, '$2y$10$oClR.oRlwQIjokvH0/XoR.Buk.5PLAfKU4CKW3e3NmstyoTpevqqe', NULL, 0, '2022-07-30 03:56:18', '2022-07-30 03:56:18');
 
 --
 -- Indexes for dumped tables
@@ -394,7 +403,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -406,7 +415,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
